@@ -3,7 +3,11 @@ extends layout
 block content
 	#home
 		.container
-			.col-sm-6
+
+
+			// Container for front page heading and short info
+
+			div(class=user?"":"col-sm-6")
 				h1= title
 				h1 Welcome to #{title}
 				hr
@@ -17,6 +21,12 @@ block content
 						a.btn1(href='/admin') #{user.company}
 					else
 						a.btn1(href='/users/'+user._id) #{user.name}
+
+
+
+
+			// Sign-in box Renders if no user is logged in
+			
 			if !user
 				.col-sm-5.col-sm-offset-1.box2(style="padding-top:25px;")
 					h1 Login to continue
@@ -24,7 +34,7 @@ block content
 					form.form-horizontal(method="POST" action="/login")
 						.form-group
 							.col-sm-6.col-sm-offset-3
-								input.form-control(name="username" ,type="text" ,placeholder="ID" required)
+								input.form-control.username(name="username" ,type="text" ,placeholder="ID" required)
 						.form-group
 							.col-sm-6.col-sm-offset-3
 								input.form-control(name="password" ,type="password",placeholder="Password" required)
