@@ -5,12 +5,12 @@ block content
 		.container
 			.col-sm-6
 				h1= title
-				h3 Welcome to #{title}
+				h1 Welcome to #{title}
 				hr
 				ul
-					li Track working hours
-					li Get salary info
-					li Apply for leaves
+					li Time Tracking
+					li Employee Schedule
+					li Payroll Reporting
 				if user
 					h3 Welcome #{user.name}
 					if user.admin=="admin"
@@ -28,14 +28,13 @@ block content
 						.form-group
 							.col-sm-6.col-sm-offset-3
 								input.form-control(name="password" ,type="password",placeholder="Password" required)
-						input.btn.btn-success(type="submit" value="Login")
+						input.btn.btn-success.btn-lg(type="submit" value="Login")
 					hr
-					h4 Don't have an account ?
+					h3 Don't have an account ?
+					a.btn.btn-primary.btn-lg(href='/signup/emp') Register as an employee *
 					br
-					a.btn.btn-primary.btn-xs(href='/signup/emp') Register as an employee *
 					br
-					br
-					a.btn.btn-primary.btn-xs(href='/signup/admin') Register as a company admin
+					a.btn.btn-primary.btn-lg(href='/signup/admin') Register as a company admin
 					br
 					br
 					p *Company key required to register as an employee
